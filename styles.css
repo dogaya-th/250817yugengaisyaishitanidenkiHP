@@ -740,6 +740,13 @@ a {
     text-decoration: underline;
 }
 
+/* スマホでのテーブル調整 */
+@media (max-width: 767px) {
+    .nowrap-mobile {
+        white-space: nowrap;
+    }
+}
+
 /* 会社地図 */
 .company-map {
     padding: var(--section-padding) 0;
@@ -1118,6 +1125,17 @@ a {
     flex-shrink: 0;
 }
 
+/* モバイル専用改行 */
+.mobile-br {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .mobile-br {
+        display: inline;
+    }
+}
+
 /* アクセシビリティ */
 :focus {
     outline: 2px solid var(--color-primary);
@@ -1193,6 +1211,11 @@ a {
         font-size: 0.85rem;
         padding: 0.5rem 1rem;
     }
+    
+    /* PC画面では改行を無効化 */
+    .service-nav__link br {
+        display: none;
+    }
 }
 
 /* デスクトップ対応 */
@@ -1206,7 +1229,9 @@ a {
     }
 
     .strengths__grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     .service-detail__image {
